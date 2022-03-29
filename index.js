@@ -3,40 +3,27 @@
   var Keyboard  = Keyboard  || {}; 
   var Component = Component || {};
 
-  /**
-  * Keyboard Map
-  */
- Keyboard.Keymap = {
+/*Kontroller med Tangentbordet*/
+Keyboard.Keymap = {
     37: 'left',
     38: 'up',
     39: 'right',
     40: 'down'
-  };
-  
-  /**
-   * Keyboard Events
-   */
-  Keyboard.ControllerEvents = function() {
-    
-    // Setts
+};
+Keyboard.ControllerEvents = function() {
     var self      = this;
     this.pressKey = null;
     this.keymap   = Keyboard.Keymap;
     
-    // Keydown Event
     document.onkeydown = function(event) {
-      self.pressKey = event.which;
-    };
-    
-    // Get Key
+        self.pressKey = event.which;
+    };  
     this.getKey = function() {
-      return this.keymap[this.pressKey];
+        return this.keymap[this.pressKey];
     };
-  };
+};
 
-  /**
-  * Game Component Stage
-  */
+  /*Game Component Stage*/
  Component.Stage = function(canvas, conf) {  
    
     // Sets
